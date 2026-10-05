@@ -1,0 +1,59 @@
+project_name: ORSIFlow
+
+__base__:
+  - config/dataset_352x352.yaml
+
+checkpoint_interval: 10
+train_eval_datasets:
+  - ORSSD
+
+# VAE configuration
+vae:
+  name: model.vae.VAE
+  params:
+    in_channels: 1
+    latent_channels: 4
+    hidden_channels: 64
+    downsample_factor: 4
+    pretrained_path: null
+
+model:
+  name: model.net.net
+  params:
+    class_num: 4
+    mask_chans: 4
+    mask_stride: 1
+    mask_patch_size: 3
+
+cond_uvit:
+  name: model.net.EmptyObject
+  params:
+    conditioning_klass: model.net.EmptyObject
+
+diffusion_model:
+  name: model.latent_rectified_flow.ORSIFlow
+  params:
+    model: #model
+    vae: #vae
+    image_size: 352
+    channels: 1
+    latent_channels: 4
+    cond_channels: 3
+    extra_channels: 0
+    num_sample_steps: 3
+    noise_d: 64
+    loss_type: 'l2'
+    freeze_vae: True
+    clip_sample_denoised: True
+
+optimizer:
+  name: torch.optim.AdamW
+  params:
+    lr: 1e-4
+
+train_val_forward_fn: "model.train_val_forward.latent_flow_train_val_forward"
+
+train_dataset:
+  name: dataset.data_val.PolypObjDataset
+  params:
+    boundary_modification: True

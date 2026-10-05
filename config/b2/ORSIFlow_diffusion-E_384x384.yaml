@@ -1,0 +1,6 @@
+project_name: ORSIFlow-Diffusion-B2
+
+__base__:
+  - config/b2/ORSIFlow_diffusion_384x384.yaml
+
+train_val_forward_fn: "model.train_val_forward.modification_train_val_forward_e"

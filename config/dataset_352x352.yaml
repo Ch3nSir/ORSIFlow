@@ -1,0 +1,26 @@
+train_dataset:
+  name: dataset.data_val.PolypObjDataset
+  params:
+    image_root: './dataset/ORSSD/train/Image-train/'
+    gt_root: './dataset/ORSSD/train/GT-train/'
+    trainsize: 352
+
+test_dataset:
+  ORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: './dataset/ORSSD/test/Image-test/'
+      gt_root: './dataset/ORSSD/test/GT-test/'
+      testsize: 352
+  EORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: './dataset/ORSSD/test/Image-test/'
+      gt_root: './dataset/ORSSD/test/GT-test/'
+      testsize: 352
+  'ORSI-4199':
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: './dataset/ORSSD/test/Image-test/'
+      gt_root: './dataset/ORSSD/test/GT-test/'
+      testsize: 352

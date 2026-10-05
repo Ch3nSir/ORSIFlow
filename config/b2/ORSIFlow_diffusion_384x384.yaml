@@ -1,0 +1,31 @@
+project_name: ORSIFlow-Diffusion-B2
+
+__base__:
+  - config/b2/ORSIFlow_diffusion_352x352.yaml
+
+diffusion_model:
+  name: model.SimpleDiffSef.CondGaussianDiffusion
+  params:
+    model: #model
+    image_size: 384
+    noise_d: 70
+
+train_dataset:
+  name: dataset.data_val.PolypObjDataset
+  params:
+    trainsize: 384
+    boundary_modification: True
+
+test_dataset:
+  ORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      testsize: 384
+  EORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      testsize: 384
+  'ORSI-4199':
+    name: dataset.data_val.test_dataset
+    params:
+      testsize: 384

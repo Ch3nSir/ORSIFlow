@@ -1,0 +1,32 @@
+project_name: ORSIFlow-local
+
+__base__:
+  - config/ORSIFlow_352x352.yaml
+
+train_dataset:
+  name: dataset.data_val.PolypObjDataset
+  params:
+    image_root: '/workspace/ORSIFlow/dataset/ORSSD/train/images/'
+    gt_root: '/workspace/ORSIFlow/dataset/ORSSD/train/masks/'
+    trainsize: 352
+
+test_dataset:
+  ORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: '/workspace/ORSIFlow/dataset/ORSSD/test/images/'
+      gt_root: '/workspace/ORSIFlow/dataset/ORSSD/test/masks/'
+      testsize: 352
+  EORSSD:
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: '/workspace/ORSIFlow/dataset/EORSSD/test/images/'
+      gt_root: '/workspace/ORSIFlow/dataset/EORSSD/test/masks/'
+      testsize: 352
+  'ORSI-4199':
+    name: dataset.data_val.test_dataset
+    params:
+      image_root: '/workspace/ORSIFlow/dataset/ORSI-4199/test/images/'
+      gt_root: '/workspace/ORSIFlow/dataset/ORSI-4199/test/masks/'
+      testsize: 352
+
