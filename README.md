@@ -8,7 +8,7 @@ This repository contains the codebase for ORSIFlow: Saliency-Guided Rectified Fl
 
 ## Architecture
 
-![https://i.postimg.cc/k5SJKnkS/flow-draft.png](https://i.postimg.cc/k5SJKnkS/flow-draft.png)
+![https://i.postimg.cc/90CRkX9p/network.png](https://i.postimg.cc/k5SJKnkS/flow-draft.png)
 
 
 
@@ -43,7 +43,7 @@ The paper reports results on three optical remote sensing saliency benchmarks:
 
 Update the dataset roots in `config/dataset_352x352.yaml` or create a local override from `config/local_ORSIFlow_352x352.yaml`.
 
-Download the following underwater SOD datasets and organize them as follows:
+Download the following ORSI SOD datasets and organize them as follows:
 
 ```
 media/dataset/
