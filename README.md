@@ -8,7 +8,7 @@ This repository contains the codebase for ORSIFlow: Saliency-Guided Rectified Fl
 
 ## Architecture
 
-![https://i.postimg.cc/90CRkX9p/network.png](https://i.postimg.cc/k5SJKnkS/flow-draft.png)
+![https://i.postimg.cc/90CRkX9p/network.png](https://i.postimg.cc/90CRkX9p/network.png)
 
 
 
